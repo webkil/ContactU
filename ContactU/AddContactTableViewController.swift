@@ -17,6 +17,7 @@ class AddContactTableViewController: UITableViewController, UIImagePickerControl
     @IBOutlet var  emailTextField: UITextField! = UITextField()
     @IBOutlet var  phoneTextField: UITextField! = UITextField()
     @IBOutlet var  contactImageView: UIImageView! = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,9 +42,9 @@ class AddContactTableViewController: UITableViewController, UIImagePickerControl
     }
     
     
-   func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage info: NSDictionary!) {
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
         
-        let pickedImage:UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
+        let pickedImage:UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage!
         
         // small picture
         let smallPicture = scaleImageWith(pickedImage, newSize: CGSizeMake(100, 100))
@@ -56,7 +57,7 @@ class AddContactTableViewController: UITableViewController, UIImagePickerControl
         contactImageView.image = smallPicture
         
         picker.dismissViewControllerAnimated(true, completion: nil)
-    
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
