@@ -40,11 +40,9 @@ class AddContactTableViewController: UITableViewController, UIImagePickerControl
         
     }
     
-   
     
-    
-    func uiimagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
-
+   func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage info: NSDictionary!) {
+        
         let pickedImage:UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
         
         // small picture
