@@ -80,20 +80,20 @@ class ListTableViewController: UITableViewController, MFMessageComposeViewContro
 
     // #pragma mark - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return toDoItems.count
     }
 
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:ListTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ListTableViewCell
 
        
@@ -107,7 +107,7 @@ class ListTableViewController: UITableViewController, MFMessageComposeViewContro
         
         let dateString:NSString = dateFormatter.stringFromDate(infoDict.objectForKey("dueDate") as! NSDate)
         
-        cell.contactImageView.image = infoDict.objectForKey("profileImage") as! UIImage
+        cell.contactImageView.image = infoDict.objectForKey("profileImage") as? UIImage
         cell.nameLabel.text = (firstName as String) + " " + (lastName as String)
         cell.titleLAbel.text = infoDict.objectForKey("title") as! NSString as String
         cell.dueDateLabel.text = dateString as String
@@ -202,7 +202,7 @@ class ListTableViewController: UITableViewController, MFMessageComposeViewContro
 
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
             if (toDoItems.count > 0){
