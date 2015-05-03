@@ -90,13 +90,22 @@ class AddContactTableViewController: UITableViewController, UIImagePickerControl
         
         contact.contactImage = contactImageData
         
+        var toDoItem:ToDoItem = SwiftCoreDataHelper.insertManagedObject(NSStringFromClass(ToDoItem), managedObjectConect: moc) as! ToDoItem
+        
+        toDoItem.identifier = "\(NSDate())"
+        toDoItem.dueDate = NSDate()
+        toDoItem.note = ""
+        toDoItem.contact = contact
+
+        
         SwiftCoreDataHelper.saveManagedObjectContext(moc)
         
         self.navigationController!.popViewControllerAnimated(true)
-        
 
         
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

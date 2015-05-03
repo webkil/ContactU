@@ -16,7 +16,13 @@ class ListTableViewController: UITableViewController, MFMessageComposeViewContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var logoImage:UIImage = UIImage(named: "smartRIDER")!
+        self.navigationItem.titleView = UIImageView(image: logoImage)
+        
+        self.tableView.rowHeight = 127
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,7 +34,14 @@ class ListTableViewController: UITableViewController, MFMessageComposeViewContro
         super.viewDidAppear(animated)
         loadData()
         
+        if toDoItems.count == 0 {
+            let nv = self.storyboard!.instantiateViewControllerWithIdentifier("AddMoto") as! AddContactTableViewController
+            
+            self.navigationController!.pushViewController(nv, animated: true)
+        }
     }
+    
+
     
     func loadData(){
         toDoItems.removeAllObjects()
@@ -101,6 +114,9 @@ class ListTableViewController: UITableViewController, MFMessageComposeViewContro
         
         let firstName:NSString = infoDict.objectForKey("firstName") as! NSString
         let lastName:NSString = infoDict.objectForKey("lastName") as! NSString
+        let email:NSString = infoDict.objectForKey("email") as! NSString
+        
+        let phone:NSString = infoDict.objectForKey("phone") as! NSString
         
         let dateFormatter:NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM dd"
@@ -108,7 +124,11 @@ class ListTableViewController: UITableViewController, MFMessageComposeViewContro
         let dateString:NSString = dateFormatter.stringFromDate(infoDict.objectForKey("dueDate") as! NSDate)
         
         cell.contactImageView.image = infoDict.objectForKey("profileImage") as? UIImage
-        cell.nameLabel.text = (firstName as String) + " " + (lastName as String)
+        cell.firstNameLabel.text = firstName as String
+        cell.lastNameLabel.text = lastName as String
+        cell.anneeLabel.text = email as String
+        cell.kmLabel.text = "KM: " + toString(phone)
+        
         cell.titleLAbel.text = infoDict.objectForKey("title") as! NSString as String
         cell.dueDateLabel.text = dateString as String
 

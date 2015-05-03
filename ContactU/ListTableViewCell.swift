@@ -13,7 +13,14 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet  var mailButton: UIButton! = UIButton()
     @IBOutlet  var textButton: UIButton! = UIButton()
     @IBOutlet  var callButton: UIButton! = UIButton()
-    @IBOutlet  var nameLabel: UILabel! = UILabel()
+  
+    @IBOutlet  var lastNameLabel: UILabel! = UILabel()
+    @IBOutlet  var firstNameLabel: UILabel! = UILabel()
+
+    @IBOutlet  var anneeLabel: UILabel! = UILabel()
+    
+    @IBOutlet var kmLabel: UILabel! = UILabel()
+    
     @IBOutlet  var titleLAbel: UILabel!  = UILabel()
     @IBOutlet  var dueDateLabel: UILabel! = UILabel()
 

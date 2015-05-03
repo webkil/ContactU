@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0.66, green: 0.78, blue: 0.31, alpha: 1)
-        UIButton.appearance().tintColor = UIColor(red: 0.88, green: 0.53, blue: 0.21, alpha: 1)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 61/255.0, green: 86/255.0, blue: 110/255.0, alpha: 1)
+        UIButton.appearance().tintColor = UIColor(red: 61/255.0, green: 86/255.0, blue: 110/255.0, alpha: 1)
+        
+        
         
         return true
     }
