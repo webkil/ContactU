@@ -24,6 +24,7 @@
 		FA1984C11AF2DB0F002D9019 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1984BF1AF2DB0F002D9019 /* Contact.swift */; };
 		FA1F4D681AF2C8430024933D /* smartRIDER.png in Resources */ = {isa = PBXBuildFile; fileRef = FA1F4D671AF2C8430024933D /* smartRIDER.png */; };
 		FA1F4D6A1AF2CF770024933D /* motoPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = FA1F4D691AF2CF770024933D /* motoPhoto.png */; };
+		FA7F94611AF82DCF00E319D5 /* cvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F94601AF82DCF00E319D5 /* cvwCell.swift */; };
 		FAE516B61AF4243500450EA7 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE516B51AF4243500450EA7 /* MainPageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		FA1984BF1AF2DB0F002D9019 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		FA1F4D671AF2C8430024933D /* smartRIDER.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smartRIDER.png; path = ../../smartRIDER.png; sourceTree = "<group>"; };
 		FA1F4D691AF2CF770024933D /* motoPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = motoPhoto.png; path = ../../motoPhoto.png; sourceTree = "<group>"; };
+		FA7F94601AF82DCF00E319D5 /* cvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvwCell.swift; sourceTree = "<group>"; };
 		FAE516B51AF4243500450EA7 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				FAE516B51AF4243500450EA7 /* MainPageViewController.swift */,
 				8614B921197D9245005BF7A6 /* ListTableViewController.swift */,
 				8614B91F197D923D005BF7A6 /* ListTableViewCell.swift */,
+				FA7F94601AF82DCF00E319D5 /* cvwCell.swift */,
 				8614B91D197D8CE8005BF7A6 /* AddItemViewController.swift */,
 				8614B919197D8862005BF7A6 /* ContactsTableViewController.swift */,
 				8614B91B197D8871005BF7A6 /* ContactCellTableViewCell.swift */,
@@ -272,6 +275,7 @@
 				8614B8EA197D440C005BF7A6 /* ContactU.xcdatamodeld in Sources */,
 				FA1984C01AF2DB0F002D9019 /* ToDoItem.swift in Sources */,
 				8614B912197D49CE005BF7A6 /* SwiftCoreDataHelper.swift in Sources */,
+				FA7F94611AF82DCF00E319D5 /* cvwCell.swift in Sources */,
 				FAE516B61AF4243500450EA7 /* MainPageViewController.swift in Sources */,
 				8614B916197D81ED005BF7A6 /* AddContactTableViewController.swift in Sources */,
 				8614B91E197D8CE8005BF7A6 /* AddItemViewController.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MainPageViewController: UIViewController {
+class MainPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     
     @IBOutlet var firstNameLabel: UILabel! = UILabel()
@@ -22,8 +22,10 @@ class MainPageViewController: UIViewController {
     
     @IBOutlet var contactImageView: UIImageView! = UIImageView()
     
+    @IBOutlet var collectionView: UICollectionView!
     
     var toDoItems:NSMutableArray = NSMutableArray()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +45,6 @@ class MainPageViewController: UIViewController {
         super.viewDidAppear(animated)
         loadData()
         
-        
         if toDoItems.count == 0 {
             let nv = self.storyboard!.instantiateViewControllerWithIdentifier("AddMoto") as! AddContactTableViewController
             
@@ -51,6 +52,35 @@ class MainPageViewController: UIViewController {
         }
         
         afficheMoto(0)
+    
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.collectionView!.reloadData()
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        loadData()
+        return toDoItems.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell: cvwCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! cvwCell
+        
+        let infoDict:NSDictionary = toDoItems.objectAtIndex(indexPath.row) as! NSDictionary
+        
+        let firstName:NSString = infoDict.objectForKey("firstName") as! NSString
+        
+        
+        cell.lblCell.text = firstName as String
+        cell.imgCell.image = infoDict.objectForKey("profileImage") as? UIImage
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        afficheMoto(indexPath.row)
         
     }
     
@@ -98,6 +128,8 @@ class MainPageViewController: UIViewController {
     }
     
     
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -130,7 +162,6 @@ class MainPageViewController: UIViewController {
         kmLabel.text = "KM: " + toString(phone)
       
     }
-    
     
     
     func delete (cellForRowAtIndexPath indexPath: NSIndexPath) {
